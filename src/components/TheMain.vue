@@ -1,8 +1,8 @@
 <template>
     <main>
-        <section class="albums h-100 container d-flex align-items-center">
+        <section class="albums h-100 container d-flex align-items-center ">
             <div class="discs-list row gy-3 gx-2">
-                <div class="column p-3 " v-for="(disc, i) in discs" :key="i">
+                <div class="column p-4 " v-for="(disc, i) in discs" :key="i">
                     <DiscCard :image="disc.poster" :title="disc.title" :author="disc.author" :year="disc.year" />
                 </div>
             </div>
@@ -38,9 +38,11 @@ main {
     height: 93vh;
 
     .column {
-        width: calc(100% / 5 - 10px);
-        margin: 5px;
+        width: calc(100% / 5 - 40px);
+        margin: 10px 20px;
         background-color: $secondary_bg;
     }
+
+
 }
 </style>

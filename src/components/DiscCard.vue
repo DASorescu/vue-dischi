@@ -4,9 +4,9 @@
             <img :src="image" :alt="title" class="img-fluid">
         </figure>
         <div class="text-center">
-            <h3 class="album-name">{{ title }}</h3>
-            <p class="author">{{ author }}</p>
-            <date class="release-date">{{ year }}</date>
+            <h3 class="album-name mb-4">{{ title }}</h3>
+            <p class="author m-0">{{ author }}</p>
+            <p class="release-date m-0">{{ year }}</p>
         </div>
     </div>
 </template>
@@ -28,5 +28,9 @@ export default {
 <style lang="scss" scoped>
 figure {
     height: 40%;
+}
+
+p {
+    color: #6F726D;
 }
 </style>
