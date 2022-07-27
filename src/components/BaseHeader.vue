@@ -1,15 +1,21 @@
 <template>
-    <header>
+    <header class="d-flex align-items-center justify-content-between">
         <figure class=" h-100 m-0 d-flex justify-content-center align-items-center ">
             <img src="../assets/img/logo-small.svg" alt="Music" class="img-fluid">
         </figure>
+        <OptionSelect class="mx-4" />
     </header>
 </template>
 
 
 <script>
+import OptionSelect from './OptionSelect.vue';
 export default {
-    name: 'BaseHeader',
+    name: "BaseHeader",
+    components: {
+
+        OptionSelect
+    }
 }
 </script>
 
