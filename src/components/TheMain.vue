@@ -8,10 +8,9 @@
             </div>
             <div v-else class="charging">
                 <h3>Loading...</h3>
-                <div class="fa-4x">
-                    <i class="fa-solid fa-compact-disc fa-spin"></i>
+                <div class="fa-3x fa-spin ">
+                    <font-awesome-icon icon="fa-solid fa-compact-disc" />
                 </div>
-
             </div>
         </section>
     </main>
@@ -43,7 +42,7 @@ export default {
 
 <style lang="scss">
 @import'../assets/scss/vars';
-@import'../assets/scss/icons';
+
 
 main {
     color: #fff;
@@ -59,7 +58,19 @@ main {
     .charging {
         width: 100%;
         text-align: center;
+        position: relative;
+
+        div {
+            width: 50px;
+            position: absolute;
+            left: 47%;
+
+        }
+
     }
 
 }
 </style>
+                
+
+
