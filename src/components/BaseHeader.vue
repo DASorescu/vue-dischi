@@ -3,7 +3,7 @@
         <figure class=" h-100 m-0 d-flex justify-content-center align-items-center ">
             <img src="../assets/img/logo-small.svg" alt="Music" class="img-fluid">
         </figure>
-        <OptionSelect class="mx-4" />
+        <OptionSelect class="mx-4" :generi="this.generi" />
     </header>
 </template>
 
@@ -12,10 +12,13 @@
 import OptionSelect from './OptionSelect.vue';
 export default {
     name: "BaseHeader",
+    props: {
+        generi: Array,
+    },
     components: {
 
         OptionSelect
-    }
+    },
 }
 </script>
 

@@ -25,12 +25,21 @@ export default {
     data() {
         return {
             discs: [],
+            genera: [],
         };
     },
+
     methods: {
         getAlbums() {
             axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
                 this.discs = res.data.response;
+
+                for (let disc of this.discs) {
+                    if (!this.genera.includes(disc.genre)) {
+                        this.genera.push(disc.genre)
+                    }
+                }
+                this.$emit('generi', this.genera)
             });
         }
     },

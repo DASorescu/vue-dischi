@@ -1,7 +1,7 @@
 <template>
   <div>
-    <BaseHeader></BaseHeader>
-    <TheMain></TheMain>
+    <BaseHeader :generi="this.generi"></BaseHeader>
+    <TheMain @generi="getGer"></TheMain>
   </div>
 </template>
 
@@ -12,9 +12,19 @@ import TheMain from './components/TheMain'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      generi: [],
+    }
+  },
   components: {
     BaseHeader,
     TheMain,
+  },
+  methods: {
+    getGer(generi) {
+      this.generi = generi
+    }
   }
 }
 </script>
