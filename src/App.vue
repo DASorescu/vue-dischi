@@ -1,7 +1,7 @@
 <template>
   <div>
-    <BaseHeader :generi="this.generi"></BaseHeader>
-    <TheMain @generi="getGer"></TheMain>
+    <BaseHeader :generi="this.generi" @genre-change="setSelectedGenre"></BaseHeader>
+    <TheMain @generi="getGer" :selected-genre="selectedGenre"></TheMain>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       generi: [],
+      selectedGenre: '',
     }
   },
   components: {
@@ -24,8 +25,11 @@ export default {
   methods: {
     getGer(generi) {
       this.generi = generi
+    },
+    setSelectedGenre(genre) {
+      this.selectedGenre = genre;
     }
-  }
+  },
 }
 </script>
 

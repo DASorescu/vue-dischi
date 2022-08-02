@@ -3,7 +3,7 @@
         <figure class=" h-100 m-0 d-flex justify-content-center align-items-center ">
             <img src="../assets/img/logo-small.svg" alt="Music" class="img-fluid">
         </figure>
-        <OptionSelect class="mx-4" :generi="this.generi" />
+        <OptionSelect class="mx-4" :generi="this.generi" @option-change="emitGenreChange" />
     </header>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     name: "BaseHeader",
     props: {
         generi: Array,
+    },
+    methods: {
+        emitGenreChange(genre) {
+            this.$emit('genre-change', genre)
+        }
     },
     components: {
 

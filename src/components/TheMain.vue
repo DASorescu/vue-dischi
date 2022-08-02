@@ -2,7 +2,7 @@
     <main>
         <section class="albums h-100 container d-flex align-items-center ">
             <div v-if="discs.length === 10" class="discs-list row gy-3 gx-2">
-                <div class="column p-4 " v-for="(disc, i) in discs" :key="i">
+                <div class="column p-4 " v-for="(disc, i) in filteredDiscs" :key="i">
                     <DiscCard :image="disc.poster" :title="disc.title" :author="disc.author" :year="disc.year" />
                 </div>
             </div>
@@ -28,7 +28,16 @@ export default {
             genera: [],
         };
     },
-
+    props: {
+        selectedGenre: String,
+    },
+    computed: {
+        filteredDiscs() {
+            if (!this.selectedGenre) return this.discs;
+            return this.discs.filter((disc) => disc.genre === this.selectedGenre
+            )
+        }
+    },
     methods: {
         getAlbums() {
             axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
